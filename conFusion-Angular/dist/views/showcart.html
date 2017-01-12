@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row row-content">
+            <div class="col-xs-12">             
+               <h2>Items in Cart</h2>
+               <ul class="media-list">
+                    <li class="media" ng-repeat="item in items">
+                        <div class="media-left media-middle">
+                            <a>
+                            <img class="media-object img-thumbnail"
+                            ng-src={{item.image}} alt="Peter Pan">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">{{item.name}}
+                            <small>{{item.price/100 | currency}}</small></h3>
+                            <p>{{item.description}}</p>
+                        </div>
+                    </li>
+                    <h1>Total: {{total/100 | currency}}</h1>
+                </ul>     
+                
+                <button ng-click="submitOrder()" class="btn btn-xs btn-success pull-right"
+                        type="button">
+                            Submit Order
+                </button>
+                <button ng-click="cancelOrder()" class="btn btn-xs btn-warning"
+                        type="button">
+                            Cancel Order
+                </button>
+    </div>
+
+</div>
